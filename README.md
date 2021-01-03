@@ -29,9 +29,9 @@ you can either
   - **pull the image** from the DockerHub (      ), or
   
   - **build the image** locally using the provided scripts.You can find all scripts (for building the application and docker images) 
-         within the folder **'DockerizeApp'**.
+         within the folder **'dockerScripts'**.
         
-If you look at the 'DockerizeApp' folder, you you see two startup scripts. 
+If you look at the 'dockerScripts' folder, you you see two startup scripts. 
 
     'startup-docker-link.sh'  is using legacy docker --link, wheras,
     'startup-docker-compose.sh' is using docker-compose to build/deploy both containers.
