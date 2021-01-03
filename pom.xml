@@ -35,16 +35,15 @@
          <!-- Database switch : 
          	  use derby for development/local machine
               use mysql for production/docker deployments-->
-		
-		<!-- <dependency>
+		 <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency>-->
-		<dependency>
+		</dependency>
+		<!-- <dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
