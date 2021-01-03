@@ -10,6 +10,7 @@ echo 'this will run your spring boot application and MySql server in seperate co
 docker pull mysql:5.6
 docker images | grep 'mysql'
 #mount a volume from the host directory (datavolumes)
+mkdir -p dockervolume
 docker run -e MYSQL_ROOT_PASSWORD=root -e MYSQL_PASSWORD=root -e MYSQL_DATABASE=lms -v $(pwd)/dockervolume:/var/lib/mysql -d -p 6033:3306 --name docker-mysql mysql:5.6
 # using  mysql-startup.sql for DDL
 #mysql -uroot -proot -h127.0.0.1 -P6603 < mysql-startup.sql
