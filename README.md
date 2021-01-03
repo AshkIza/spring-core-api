@@ -16,17 +16,19 @@ Application is listening on port 8089 (http://localhost:8089/).
 
 
 **NOTE**: to use either MySQL or Derby, you need to make sure following files are refereing to the proper Database
-**application.properties
-pom.xml**
+
+     application.properties
+      
+     pom.xml
 
 ---------------------------------------------------------------------------------------------------------------------
 **How to Access the docker image for this Springboot Application?**
 
 you can either
 
-  - pull the ready image from the DockerHub (      ), or
+  - **pull the image** from the DockerHub (      ), or
   
-  - build the image locally using the provided scripts.You can find all scripts (for building the application and docker images) 
+  - **build the image** locally using the provided scripts.You can find all scripts (for building the application and docker images) 
          within the folder **'DockerizeApp'**.
         
 If you look at the 'DockerizeApp' folder, you you see two startup scripts. 
