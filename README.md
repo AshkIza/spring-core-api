@@ -75,6 +75,6 @@ How to Create and Use Bash Scripts : https://www.taniarascia.com/how-to-create-a
 
 Docker With Spring Boot and MySQL - docker --link: https://dzone.com/articles/all-about-hibernate-manytomany-association
 
-**Docker With Spring Boot and MySQL - Docker Compose : https://dzone.com/articles/docker-with-spring-boot-and-mysql-docker-compose-p**
+Docker With Spring Boot and MySQL - Docker Compose : https://dzone.com/articles/docker-with-spring-boot-and-mysql-docker-compose-p
 
 Persistent data in Docker volumes : https://codeblog.dotsandbrackets.com/persistent-data-docker-volumes/
