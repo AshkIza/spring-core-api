@@ -24,8 +24,9 @@ pom.xml**
 
 you can either
 
-        - pull the ready image from the DockerHub (      ), or
-        - build the image locally using the provided scripts.You can find all scripts (for building the application and docker images) 
+  - pull the ready image from the DockerHub (      ), or
+  
+  - build the image locally using the provided scripts.You can find all scripts (for building the application and docker images) 
          within the folder **'DockerizeApp'**.
         
 If you look at the 'DockerizeApp' folder, you you see two startup scripts. 
