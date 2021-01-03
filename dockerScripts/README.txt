@@ -5,15 +5,18 @@ following script runs your spring application in a container(MySQL server in a s
  It uses legacy 'dcoker --link' to connect both containers
  you can access your application from : http://localhost:8089/  
    
-  ./startup-docker-link.sh 
+  ./start-docker-link.sh 
 
 you can use following script to stop the application (and remove the containers/images).
  
-  ./stopandremove.sh
+ ./stop-docker-link.sh
 
 
 Method 2: (docker-compose)
+delegating all the build image and run containers (port mapping, mounting volumes,..) to YAML file (docker-compose.yml), you can start and stop the application using:
 
+docker-compose up
+docker compose down
 
 
 NOTE: if scripts dont work, change them to executables -> chmod +x startup-docker-link.sh
