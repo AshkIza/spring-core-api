@@ -47,7 +47,7 @@ following script runs your spring application in a container(MySQL server in a s
 
 NOTE: if scripts dont work, change them to executables -> chmod +x startup-docker-link.sh
 
-**Method 2 : dockerScripts/docker-compose up: (docker-compose up/down)**
+**Method 2 : dockerScripts/docker-compose up/down: (docker-compose)**
 By delegating 'build image' and 'run containers' (port mapping, mounting volumes,..) to **YAML file (docker-compose.yml)**, you can start and stop the application using:
 
           docker-compose up
