@@ -12,13 +12,26 @@ You can build this application (mvn install -DskipTests) and run it on your loca
 
 For production deployments, **MySQL database is used (within its own container)**.
 In this case, SpringBoot application and MySql run in separate containers.
-You can find all scripts (for building the application and docker images) within the folder **'DockerizeApp'**.
 Application is listening on port 8089 (http://localhost:8089/).
 
 
 **NOTE**: to use either MySQL or Derby, you need to make sure following files are refereing to the proper Database
 **application.properties
 pom.xml**
+
+---------------------------------------------------------------------------------------------------------------------
+**How to Access the docker image for this Springboot Application?**
+
+you can either
+
+        - pull the ready image from the DockerHub (      ), or
+        - build the image locally using the provided scripts.You can find all scripts (for building the application and docker images) 
+         within the folder **'DockerizeApp'**.
+        
+If you look at the 'DockerizeApp' folder, you you see two startup scripts. 
+
+    'startup-docker-link.sh'  is using legacy docker --link, wheras,
+    'startup-docker-compose.sh' is using docker-compose to build/deploy both containers.
 
 **DockerizeApp/Method 1: (docker --link)**
     
