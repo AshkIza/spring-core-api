@@ -31,26 +31,28 @@ you can either
   - **build the image** locally using the provided scripts.You can find all scripts (for building the application and docker images) 
          within the folder **'dockerScripts'**.
         
-If you look at the 'dockerScripts' folder, you you see two startup scripts. 
 
-    'startup-docker-link.sh'  is using legacy docker --link, wheras,
-    'startup-docker-compose.sh' is using docker-compose to build/deploy both containers.
 
-**DockerizeApp/Method 1: (docker --link)**
+**Method 1 : dockerScripts/start-docker-link.sh (docker --link)**
     
 following script runs your spring application in a container(MySQL server in a separate container).
         It uses legacy 'dcoker --link' to connect both containers
         you can access your application from : http://localhost:8089/  
    
-        ./startup-docker-link.sh 
+        ./start-docker-link.sh  
 
          you can use following script to stop the application (and remove the containers/images).
  
-        ./stopandremove.sh
+       ./stop-docker-link.sh
 
 NOTE: if scripts dont work, change them to executables -> chmod +x startup-docker-link.sh
 
-**DockerizeApp/Method 2: (docker-compose)**
+**Method 2 : dockerScripts/docker-compose up: (docker-compose up/down)**
+By delegating 'build image' and 'run containers' (port mapping, mounting volumes,..) to **YAML file (docker-compose.yml)**, you can start and stop the application using:
+
+          docker-compose up
+          
+          docker compose down
 
 
 
@@ -66,6 +68,8 @@ MySQL Docker Container Tutorial: https://phoenixnap.com/kb/mysql-docker-containe
 
 How to Create and Use Bash Scripts : https://www.taniarascia.com/how-to-create-and-use-bash-scripts/
 
-Docker With Spring Boot and MySQL : https://dzone.com/articles/all-about-hibernate-manytomany-association
+Docker With Spring Boot and MySQL - docker --link: https://dzone.com/articles/all-about-hibernate-manytomany-association
+
+**Docker With Spring Boot and MySQL - Docker Compose : https://dzone.com/articles/docker-with-spring-boot-and-mysql-docker-compose-p**
 
 Persistent data in Docker volumes : https://codeblog.dotsandbrackets.com/persistent-data-docker-volumes/
