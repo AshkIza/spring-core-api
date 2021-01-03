@@ -21,6 +21,11 @@ Application is listening on port 8089 (http://localhost:8089/).
       
      pom.xml
 
+**NOTE**: Since containers are supposed to be epehmeral, we mount a volume to the MySQL docker container. data volumes' life-cycle are beyond containers (they exist even after the docker container has been removed). 
+
+we are using **dockerScripts/dockervolume in the host machine as the data volume**. If you don't have this directory. you can create it by running 
+'mkdir -p dockerScripts/dockervolume '
+
 ---------------------------------------------------------------------------------------------------------------------
 **How to Access the docker image for this Springboot Application?**
 
