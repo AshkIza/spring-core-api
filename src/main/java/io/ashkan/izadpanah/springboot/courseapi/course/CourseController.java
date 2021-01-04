@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,7 +40,7 @@ public class CourseController {
 	
 	@GetMapping(path = "/courses/{id}")
 	@ResponseBody
-	Course getCourse(@PathVariable String id){
+	Course getCourse(@PathVariable Long id){
 		return courseService.get(id).get();
 	}
 	
@@ -51,11 +52,15 @@ public class CourseController {
 	
 	@PutMapping(value = "/courses/{id}")
 	@ResponseBody
-	void updateCourse(@PathVariable String id, @RequestBody Course course) {
+	void updateCourse(@PathVariable Long id, @RequestBody Course course) {
 		course.setId(id);
 		courseService.update(course);
 	}
 	
-	
+	@DeleteMapping(value = "/courses/{id}")
+	@ResponseBody
+	void updateCourse(@PathVariable Long id) {
+		courseService.delete(id);
+	}
 
 }

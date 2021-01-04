@@ -1,6 +1,5 @@
 package io.ashkan.izadpanah.springboot.courseapi.topic;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -59,7 +57,7 @@ public class TopicController {
 	}
 	
 	@RequestMapping("/topics/{id}")
-	Topic getTopic(@PathVariable String id){
+	Topic getTopic(@PathVariable Long id){
 		return topicService.get(id).get();
 	}
 	
@@ -70,13 +68,13 @@ public class TopicController {
 	}
 	
 	@RequestMapping(method= RequestMethod.PUT, value= "/topics/{id}")
-	void updateTopic(@PathVariable String id, @RequestBody Topic topic){
+	void updateTopic(@PathVariable Long id, @RequestBody Topic topic){
 		topicService.update(id, topic);
 		
 	}
 	
 	@DeleteMapping("/topics/{id}")
-	void deleteTopic(@PathVariable String id) {
+	void deleteTopic(@PathVariable Long id) {
 		topicService.delete(id);
 
 	}

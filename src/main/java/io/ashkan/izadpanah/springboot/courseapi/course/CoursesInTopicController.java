@@ -31,7 +31,7 @@ public class CoursesInTopicController {
 	@RequestMapping(value ="/{topicId}", 
 			produces = MediaType.APPLICATION_JSON_VALUE, 
 			consumes = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<List<Course>> getAllCoursesforTopic(@PathVariable String topicId){
+	ResponseEntity<List<Course>> getAllCoursesforTopic(@PathVariable Long topicId){
 		Topic topic = topicService.get(topicId).get();
 		List<Course>  courses= courseService.getAllCoursesforTopic(topicId);
 		return ResponseEntity.ok(courses);
@@ -40,7 +40,7 @@ public class CoursesInTopicController {
 	@RequestMapping(value ="/concise/{topicId}", 
 			produces = MediaType.TEXT_PLAIN_VALUE,
 			consumes = MediaType.TEXT_PLAIN_VALUE)
-	ResponseEntity<String> getConciseCourseInfo(@PathVariable String topicId){
+	ResponseEntity<String> getConciseCourseInfo(@PathVariable Long topicId){
 		Topic topic = topicService.get(topicId).get();
 		if(topic == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.format("%s is not a valid topicId", topicId));

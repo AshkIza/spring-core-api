@@ -18,13 +18,11 @@ public class TopicService {
 			   new Topic("springFramework", "Spring framework", "Spring Core/MVC/Rest/Data/Batch/Security"),
 			   new Topic("k8s", "kubernetes", "dockerizeing applications and kubernetes deployment")));*/
 	
-	
-	
 	Iterable<Topic> getAll(){
 		return topicRepository.findAll();
 	}
 	
-	public Optional<Topic> get(String id){
+	public Optional<Topic> get(Long id){
 		return topicRepository.findById(id);
 	}
 	
@@ -32,12 +30,12 @@ public class TopicService {
 		topicRepository.save(topic);
 	}
 
-	public void update(String id, Topic topic) {
+	public void update(Long id, Topic topic) {
 		topic.setId(id);
 		topicRepository.save(topic);
 	}
 
-	public void delete(String id) {
+	public void delete(Long id) {
 		topicRepository.deleteById(id);
 	}
 

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import io.ashkan.izadpanah.springboot.courseapi.topic.Topic;
 import io.ashkan.izadpanah.springboot.courseapi.topic.TopicRepository;
 
 @Service
@@ -28,18 +29,20 @@ public class CourseService {
 		return  courseRepository.findAll();
 	}
 	
-	Optional<Course> get(String id){
+	Optional<Course> get(Long id){
 		return courseRepository.findById(id);
 	}
 	
-	void add(Course course) {
-		if(course.getTopic()!=null) {
-			topicRepository.save(course.getTopic());//saving the Topic first
+	void add(Course course) {	
+		if(course.getTopic() != null && course.getTopic().getId() == null) {
+			//should save the topic first 
+			Topic topic = topicRepository.save(course.getTopic());
+			course.setTopic(topic);
 		}
 		courseRepository.save(course);
 	}
 
-	public List<Course> getAllCoursesforTopic(String topicId) {
+	public List<Course> getAllCoursesforTopic(Long topicId) {
 		return courseRepository.findByTopicId(topicId);
 		
 	}
@@ -47,6 +50,11 @@ public class CourseService {
 	public void update(Course course) {
 		topicRepository.save(course.getTopic());//updating the Topic first
 		courseRepository.save(course);
+	}
+
+	public void delete(Long id) {
+		courseRepository.deleteById(id);
+		
 	}
 
 }

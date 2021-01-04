@@ -23,7 +23,13 @@ public class AppConfig  {
             public void addCorsMappings(CorsRegistry registry) {
             	String serverPort = env.getProperty("server.port");//8080 development , 8089 production
             	String allowedOrigins = "8089".equals(serverPort) ? "http://localhost:9090" : "*";// allow postman in development		
-                registry.addMapping("/**").allowedOrigins(allowedOrigins);
+                registry.addMapping("/**").allowedOrigins(allowedOrigins)
+                .allowedMethods("*");
+                //.allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS");
+                
+               
+                
+
                 		//.allowedOrigins("http://localhost:4200", "http://localhost:9090");
             }
         };
