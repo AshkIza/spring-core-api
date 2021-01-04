@@ -78,3 +78,5 @@ Docker With Spring Boot and MySQL - docker --link: https://dzone.com/articles/al
 Docker With Spring Boot and MySQL - Docker Compose : https://dzone.com/articles/docker-with-spring-boot-and-mysql-docker-compose-p
 
 Persistent data in Docker volumes : https://codeblog.dotsandbrackets.com/persistent-data-docker-volumes/
+
+CORS with Spring : https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration
